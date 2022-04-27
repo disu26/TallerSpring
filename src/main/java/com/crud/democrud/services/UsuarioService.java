@@ -39,6 +39,9 @@ public class UsuarioService {
         }
     }
 
-
+    public UsuarioModel actualizarUsuario(Long id, UsuarioModel usuario){
+        usuario.setId(id);
+        return usuarioRepository.save(usuario);
+    }
     
 }
