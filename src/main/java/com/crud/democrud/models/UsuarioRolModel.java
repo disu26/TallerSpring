@@ -12,10 +12,18 @@ import javax.persistence.ManyToOne;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 
+/**
+ * Modelo de la tabla usuario_rol.
+ *
+ * @author Dímar Andrey Suárez Hidalgo <dimar260212@gmail.com>
+ */
 @Entity
 @Table(name = "usuario_rol")
-public final class UsuarioRolModel {
+public class UsuarioRolModel {
 
+    /**
+     * Clave principal de la tabla, este es autoincrementable.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
