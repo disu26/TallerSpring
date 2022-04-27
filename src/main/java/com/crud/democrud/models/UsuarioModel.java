@@ -1,6 +1,10 @@
 package com.crud.democrud.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "usuario")
@@ -56,5 +60,17 @@ public class UsuarioModel {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    /**
+     * Punto de enlace entre la entidad Usuario y Usuario_rol (un usuario puede tener uno o varios roles)
+     */
+    @OneToMany(
+            fetch = FetchType.EAGER,
+            targetEntity = UsuarioRolModel.class,
+            cascade = CascadeType.REMOVE,
+            mappedBy = "usuarioModel"
+    )
+    @JsonManagedReference
+    private List<UsuarioRolModel> usuarioRolModels = new ArrayList<>();
 
 }
