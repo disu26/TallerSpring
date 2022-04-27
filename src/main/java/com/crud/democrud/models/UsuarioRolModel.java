@@ -2,7 +2,15 @@ package com.crud.democrud.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Column;
+import javax.persistence.ManyToOne;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 
 @Entity
 @Table(name = "usuario_rol")
@@ -43,9 +51,9 @@ public final class UsuarioRolModel {
         this.rol = rol;
     }
 
-    public UsuarioRolModel(Long id, String rol) {
-        this.id = id;
+    public UsuarioRolModel(String rol, UsuarioModel usuario) {
         this.rol = rol;
+        this.usuario = usuario;
     }
 
     public UsuarioRolModel() {

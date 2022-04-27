@@ -24,4 +24,26 @@ public class UsuarioRolController {
         return usuarioRolService.guardarRol(rol);
     }
 
+    @GetMapping(path = "/{id}")
+    public UsuarioRolModel obtenerRolPorId(@PathVariable("id") Long id){
+        var rol = usuarioRolService.obtenerPorId(id);
+        if(rol.isPresent()){
+            return rol.get();
+        }
+        return null;
+    }
+
+    @PutMapping(path = "/{id}")
+    public UsuarioRolModel actualizarRol(@PathVariable("id") Long id, @RequestBody UsuarioRolModel rol){
+        return usuarioRolService.actualizarRol(id, rol);
+    }
+
+    @DeleteMapping(path = "/{id}")
+    public  String eliminarRol(@PathVariable("id") Long id){
+        if (usuarioRolService.eliminar(id) != null){
+            return "Rol eliminado exitosamente";
+        }
+        return "Rol no encontrado";
+    }
+
 }

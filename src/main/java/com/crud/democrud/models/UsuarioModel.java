@@ -2,8 +2,16 @@ package com.crud.democrud.models;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-import javax.persistence.*;
-import java.util.ArrayList;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Column;
+import javax.persistence.OneToMany;
+import javax.persistence.FetchType;
+import javax.persistence.CascadeType;
+
 import java.util.List;
 
 @Entity
@@ -71,6 +79,6 @@ public class UsuarioModel {
             mappedBy = "usuario"
     )
     @JsonManagedReference
-    private List<UsuarioRolModel> usuarioRolModels = new ArrayList<>();
+    private List<UsuarioRolModel> usuarioRolModels;
 
 }
