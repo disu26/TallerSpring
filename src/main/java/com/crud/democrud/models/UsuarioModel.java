@@ -68,7 +68,7 @@ public class UsuarioModel {
             fetch = FetchType.EAGER,
             targetEntity = UsuarioRolModel.class,
             cascade = CascadeType.REMOVE,
-            mappedBy = "usuarioModel"
+            mappedBy = "usuario"
     )
     @JsonManagedReference
     private List<UsuarioRolModel> usuarioRolModels = new ArrayList<>();

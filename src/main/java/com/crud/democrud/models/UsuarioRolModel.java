@@ -23,7 +23,7 @@ public final class UsuarioRolModel {
     )
     @JoinColumn(name = "usurol_usuario_id", nullable = false)
     @JsonBackReference
-    private UsuarioModel usuarioModel;
+    private UsuarioModel usuario;
 
     private String rol;
 

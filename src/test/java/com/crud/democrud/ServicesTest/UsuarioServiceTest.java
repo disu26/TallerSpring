@@ -29,7 +29,7 @@ public class UsuarioServiceTest {
 
     @Test
     public void testBuscarUsuarioPorId(){
-        Long idBuscado=1L;
+        Long idBuscado=2L;
         Optional<UsuarioModel> usuarioModelBuscado=usuarioRepository.findById(idBuscado);
         assertThat(usuarioModelBuscado.get().getId()).isEqualTo(idBuscado);
     }
