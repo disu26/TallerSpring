@@ -47,7 +47,7 @@ public class UsuarioController {
         if (ok) {
             return "Se eliminó el usuario con id " + id;
         } else {
-            return "No pudo eliminar el usuario con id" + id;
+            return "No pudo eliminar el usuario con id " + id;
         }
     }
 
